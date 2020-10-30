@@ -1,11 +1,10 @@
 class Wektor2D
 {
-    public:
-
+public:
     Wektor2D()
     {
-      x=0;
-      y=0;
+        x = 0;
+        y = 0;
     }
 
     Wektor2D(double X, double Y)
@@ -18,6 +17,9 @@ class Wektor2D
     double getX() { return x; }
     void   setY(int a) { y = a; }
     double getY() { return y; }
+
+    double x;
+    double y;
 };
 
 double operator*(Wektor2D& W1, Wektor2D& W2)
