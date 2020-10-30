@@ -20,29 +20,15 @@ class Wektor2D
     double getY() { return y; }
 };
 
-class Suma
+double operator*(Wektor2D& W1, Wektor2D& W2)
 {
-public:
-    Suma() {}
-    Suma(Wektor2D W1, Wektor2D W2) { X = W1.x + W2.x, Y = W1.y + W2.y; }
-    double X;
-    double Y;
-};
-
-Suma operator+(Wektor2D W1, Wektor2D W2)
-{
-    return Suma(W1, W2);
+    return W1.x * W2.x + W1.y * W2.y;
 }
 
-class iloczyn
+Wektor2D operator+(Wektor2D& W1, Wektor2D& W2)
 {
-public:
-    iloczyn() {}
-    iloczyn(Wektor2D W1, Wektor2D W2) { I = W1.x * W2.x + W1.y * W2.y; }
-    double I;
-};
-
-iloczyn operator*(Wektor2D W1, Wektor2D W2)
-{
-    return iloczyn(W1, W2);
+    Wektor2D tmp = W1;
+    tmp.x += W2.x;
+    tmp.y += W2.y;
+    return tmp;
 }
